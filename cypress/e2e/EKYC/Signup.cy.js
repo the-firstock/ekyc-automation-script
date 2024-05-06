@@ -17,19 +17,26 @@ describe('Launch URL', () => {
       // s1.click_mail_continue();
       
       //  pan verification
-      s1.enter_pan_name(data.Pan_Name);
-      s1.enter_pan_no(data.Pan_no);
-      s1.enter_pan_dob(data.Pan_DOB);
-      s1.click_pan_continue();
-      cy.wait(10000);
-      s1.click_kra_continue();
+      // s1.enter_pan_name(data.Pan_Name);
+      // s1.enter_pan_no(data.Pan_no);
+      // s1.enter_pan_dob(data.Pan_DOB);
+      // s1.click_pan_continue();
+      // cy.wait(10000);
+      // s1.click_kra_continue();
 
       // personal details
-      s1.enter_mother_name();
+      s1.enter_mother_name(data.Mother_Name);
       s1.select_marital_status(data.marital_status);
-    //   s1.select_trading_experience();
-    //   s1.select_anual_income();
-    //   s1.select_occupation();
+      s1.Are_you_politically_exposed(data.politically_exposed);
+      s1.select_trading_experience(data.Your_trading_experience);
+      s1.select_anual_income(data.Anual_income);
+      // s1.select_occupation(data.occupation);
+      if (data.occupation.type === 'others') {
+        s1.select_occupation('others');
+        s1.enter_other_occupation(data.occupation.name);
+    } else {
+        s1.select_occupation(data.occupation.type);
+    }
     //   s1.click_personal_detail_continue();
 
     // //Trading Preferences

@@ -1,0 +1,7 @@
+maritalStatus = 'single'  'married',
+Are you politically exposed = 'Yes'  'No'
+Your trading experience = 'New' , '1-5 years', '5-10 years', '10-15 years', '15+ years'
+Your annual income = 'Below 1 lakh', '1-5 lakhs', '5-10 lakhs', '10-25 lakhs', '25lakhs - 1crore', 'Above one crore'
+Your Occupation = 'Agriculturist', Buisness, Government service
+
+

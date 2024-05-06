@@ -10,6 +10,13 @@
     "Bank_account_number" : "6162292596",
     "confirm_Bank_account_number" : "6162292596",
 
-    "marital_status": "single" 
-
+    "marital_status": "single" ,
+    "Mother_Name": "Geetha",
+    "politically_exposed": "Yes",
+    "Your_trading_experience": "New",
+    "Anual_income" : "10-25 lakhs",
+    "occupation" : {
+        "type": "Private sector",
+        "name": "Your Occupation Here"
+    }
 }

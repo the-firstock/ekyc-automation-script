@@ -27,7 +27,7 @@ mother_name_field= '.YourProfile_subRightContainer__Z9KJv > .MuiFormControl-root
 marital_status = '.YourProfile_subRightContainer__Z9KJv > [style="width: 100%;"] > .MuiFormControl-root > .YourProfile_chipsstylecontainer__hp9Qx > :nth-child(2) > .MuiFormControlLabel-root > .MuiButtonBase-root > .MuiChip-label';
 trading_experience = '.YourProfile_subContainer__HH3Uj > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(2) > .MuiChip-label';
 anual_income = '.YourProfile_subRightContainer__Z9KJv > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(2) > .MuiChip-label';
-occupation = ':nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(6) > .MuiChip-label';
+// occupation = ':nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(6) > .MuiChip-label';
 personal_detail_continue = '.YourProfile_buttonStack__Hmr31 > :nth-child(1)';
 
 //Trading Preferences
@@ -89,8 +89,8 @@ click_kra_continue(){
 }
 
 //personal deatils
-enter_mother_name(){
-    cy.get(this.mother_name_field).type('Mother Name');
+enter_mother_name(mothername){
+    cy.get(this.mother_name_field).type(mothername);
 }
 // select_marital_status(){
 //     cy.get(this.marital_status).click();
@@ -107,19 +107,72 @@ select_marital_status(maritalStatus) {
 }
 
 
-
-
-
-
-
-select_trading_experience(){
-    cy.get(this.trading_experience).click();
+Are_you_politically_exposed(politicallyexposed) {
+    if (politicallyexposed === 'No') {
+        cy.get('.YourProfile_subContainer__HH3Uj > [style="width: 100%;"] > .MuiFormControl-root > .YourProfile_chipsstylecontainer__hp9Qx > :nth-child(2) > .MuiFormControlLabel-root > .MuiButtonBase-root > .MuiChip-label').click();
+    } else if (politicallyexposed === 'Yes') {
+        cy.get('.YourProfile_subContainer__HH3Uj > [style="width: 100%;"] > .MuiFormControl-root > .YourProfile_chipsstylecontainer__hp9Qx > :nth-child(1) > .MuiFormControlLabel-root > .MuiButtonBase-root').click();
+    }
 }
-select_anual_income(){
-    cy.get(this.anual_income).click();
+
+
+select_trading_experience(trading_experience){
+    if (trading_experience === 'New'){
+        cy.get('.YourProfile_subContainer__HH3Uj > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(1) > .MuiChip-label').click();
+    } else if (trading_experience === '1-5 years'){
+        cy.get('.YourProfile_subContainer__HH3Uj > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(2) > .MuiChip-label').click();
+    } else if (trading_experience === '5-10 years'){
+        cy.get('.YourProfile_subContainer__HH3Uj > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(3)').click();
+    } else if (trading_experience === '10-15 years'){
+        cy.get('.YourProfile_subContainer__HH3Uj > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(4) > .MuiChip-label').click();
+    } else if (trading_experience === '15+ years'){
+        cy.get('.YourProfile_subContainer__HH3Uj > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(5) > .MuiChip-label').click();
+    }
 }
-select_occupation(){
-    cy.get(this.occupation).click();
+select_anual_income(anual_income){
+    if (anual_income === 'Below 1 lakh'){
+        cy.get('.YourProfile_subRightContainer__Z9KJv > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(1) > .MuiChip-label').click();
+    } else if (anual_income === '1-5 lakhs'){
+        cy.get('.YourProfile_subRightContainer__Z9KJv > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(2) > .MuiChip-label').click();
+    }  else if (anual_income === '5-10 lakhs'){
+        cy.get('.YourProfile_subRightContainer__Z9KJv > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(3) > .MuiChip-label').click();
+    } else if (anual_income === '10-25 lakhs'){
+        cy.get('.YourProfile_subRightContainer__Z9KJv > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(4) > .MuiChip-label').click();
+    } else if (anual_income === '25lakhs - 1crore'){
+        cy.get('.YourProfile_subRightContainer__Z9KJv > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(5) > .MuiChip-label').click();
+    } else if (anual_income === 'Above one crore'){
+        cy.get('.YourProfile_subRightContainer__Z9KJv > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(6) > .MuiChip-label').click();
+    }
+}
+
+select_occupation(occupation){
+   if (occupation === 'Agriculturist'){
+    cy.get('.YourProfile_subRightContainerOccupation__-0cfa > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(1)').click();
+   } else if (occupation === 'Buisness'){
+    cy.get('.YourProfile_subRightContainerOccupation__-0cfa > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(2) > .MuiChip-label').click();
+   } else if (occupation === 'Government service'){
+    cy.get('.YourProfile_subRightContainerOccupation__-0cfa > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(3)').click();
+   } else if (occupation === 'homemaker/housewife'){
+    cy.get('.YourProfile_subRightContainerOccupation__-0cfa > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(4) > .MuiChip-label').click();
+   } else if (occupation === 'professional'){
+    cy.get('.YourProfile_subRightContainerOccupation__-0cfa > :nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(5) > .MuiChip-label').click();
+   } else if (occupation === 'Private sector'){
+    cy.get(':nth-child(1) > :nth-child(2) > .MuiFormControl-root > .Selectdropdown_mainWrapper__aYA6c > :nth-child(6) > .MuiChip-label').click();
+   } else if (occupation === 'Public sector'){
+    cy.get(':nth-child(7) > .MuiChip-label').click();
+   } else if (occupation === 'retired'){
+    cy.get(':nth-child(8) > .MuiChip-label').click();
+   } else if (occupation === 'Student'){
+    cy.get(':nth-child(9) > .MuiChip-label').click();
+   } else if (occupation === 'others'){
+    cy.get(':nth-child(10) > .MuiChip-label').click();
+   } else if (occupation === 'self employed'){
+    cy.get(':nth-child(11) > .MuiChip-label').click();
+   }
+}
+enter_other_occupation(enter){
+    cy.get('body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > form:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)').type(enter);
+
 }
 click_personal_detail_continue(){
     cy.get(this.personal_detail_continue).click();
