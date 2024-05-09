@@ -11,20 +11,21 @@ describe('Launch URL', () => {
   cy.fixture('signup').then((data)=>{
       //mobile number verification
       s1.Enter_Mobile(data.mobile_number);
+      s1.checkbox_kyc();
       s1.click_continue();
-      //email verification
-      // s1.Enter_email(data.email);
-      // s1.click_mail_continue();
+     // email verification
+    //   s1.Enter_email(data.email);
+    //   s1.click_mail_continue();
       
-      //  pan verification
-      // s1.enter_pan_name(data.Pan_Name);
-      // s1.enter_pan_no(data.Pan_no);
-      // s1.enter_pan_dob(data.Pan_DOB);
-      // s1.click_pan_continue();
-      // cy.wait(10000);
-      // s1.click_kra_continue();
+     //  pan verification
+      s1.enter_pan_name(data.Pan_Name);
+      s1.enter_pan_no(data.Pan_no);
+      s1.enter_pan_dob(data.Pan_DOB);
+      s1.click_pan_continue();
+      cy.wait(10000);
+      s1.click_kra_continue();
 
-      // personal details
+     // personal details
       s1.enter_mother_name(data.Mother_Name);
       s1.select_marital_status(data.marital_status);
       s1.Are_you_politically_exposed(data.politically_exposed);
@@ -37,21 +38,21 @@ describe('Launch URL', () => {
     } else {
         s1.select_occupation(data.occupation.type);
     }
-    //   s1.click_personal_detail_continue();
+      s1.click_personal_detail_continue();
 
     // //Trading Preferences
-    // s1.click_Trading_Preferences_Continue();
+    s1.click_Trading_Preferences_Continue();
 
-    // //bank details
-    // s1.select_add_bankDetails_manualy();
-    // s1.click_add_manualy_button();
-    // s1.enter_branch_ifsc_field(data.Branch_IFSC);
-    // s1.enter_bank_act_no_field(data.Bank_account_number);
-    // s1.enter_comfirm_bank_act_no_field(data.confirm_Bank_account_number);
-    // s1.click_bank_continue_button();
+    //bank details
+    s1.select_add_bankDetails_manualy();
+    s1.click_add_manualy_button();
+    s1.enter_branch_ifsc_field(data.Branch_IFSC);
+    s1.enter_bank_act_no_field(data.Bank_account_number);
+    s1.enter_comfirm_bank_act_no_field(data.confirm_Bank_account_number);
+    s1.click_bank_continue_button();
 
-    // //T&C
-    // s1.click_TC_button();
+    //T&C
+    s1.click_TC_button();
 
 
 

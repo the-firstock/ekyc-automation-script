@@ -57,6 +57,9 @@ visit_url(){
 Enter_Mobile(mobileNumber){
     cy.get(this.Mobile_no_field).type(mobileNumber);
 }
+checkbox_kyc(){
+    cy.get('.PrivateSwitchBase-input').click();
+}
 click_continue() {
     cy.get(this.Continue_Button).click();
     cy.get(this.email_field, { timeout: 500000 }).should('be.visible');
@@ -166,7 +169,7 @@ select_occupation(occupation){
     cy.get(':nth-child(9) > .MuiChip-label').click();
    } else if (occupation === 'others'){
     cy.get(':nth-child(10) > .MuiChip-label').click();
-   } else if (occupation === 'self employed'){
+   } else if (occupation === ' self employed'){
     cy.get(':nth-child(11) > .MuiChip-label').click();
    }
 }
@@ -176,6 +179,14 @@ enter_other_occupation(enter){
 }
 click_personal_detail_continue(){
     cy.get(this.personal_detail_continue).click();
+}
+
+unselect_Trading_Preferences(unselect){
+    if (unselect === 'F&O'){
+        cy.get('.MuiFormGroup-root > :nth-child(1) > .MuiFormControlLabel-root').click();
+    } else if (unselect === 'mutual fund'){
+        cy.get(':nth-child(2) > .MuiFormControlLabel-root').click();
+    }
 }
 
 click_Trading_Preferences_Continue(){
