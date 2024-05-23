@@ -1,11 +1,12 @@
 {
-    "mobile_number" : "9035213140",
-    "Name":"Ramya H J",
-    "email" : "ramyajayaram17@gmail.com",
+    "mobile_number" : "8951656945",
 
-    "Pan_Name" : "HUGENAHALL JAYARAM RAMYA",
-    "Pan_no" : "AXWPR0880Q",
-    "Pan_DOB" : "08071985",
+    "Name":"umapathi",
+    "email" : "umapathid07@gmail.com",
+
+    "Pan_Name" : "umapathi",
+    "Pan_no" : "AIZPU8599H",
+    "Pan_DOB" : "16051993",
 
     "Branch_IFSC" :  "SBIN0040872",
     "Bank_account_number" : "64214561037",
@@ -27,9 +28,10 @@
     "Percentage_share1":50,
     "Nominee_DOB":"17022011",
     "Guardian_name":"Amar R",
-    "Guardian_dob":"30/06/1979",
+    "Guardian_dob":"30061979",
     "Guardian_email":"amar@gmail.com",
     "Guardian_mobilenum":"9900948030",
+    "Guardian_Relationship": "Father",
 
     "Nominee2_name":"JAYARAM",
     "Percentage-share2":25,

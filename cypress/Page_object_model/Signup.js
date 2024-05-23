@@ -64,7 +64,8 @@ relationshipdropdown=':nth-child(2) > .NomineeStyles_textfields__SHPbD > .MuiFor
 percentage_of_share ='input[name="percentageofShare"]';
 date_of_birth='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 guardian_name='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
-guardian_dob="body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)";
+// guardian_dob='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)'
+// guardian_dob="body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)";
 guardian_email='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 guardian_mobilenum='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 guardian_relationship='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)';
@@ -142,7 +143,9 @@ checkbox_kyc(){
 }
 click_continue() {
     cy.get(this.Continue_Button).click();
-    cy.wait(35000); //cy.get(this.email_field, { timeout: 200000 }).should('be.visible');
+    // cy.get(this.email_field, { timeout: 200000 }).should('be.visible');
+    // cy.get(this.Pan_no_field, { timeout: 200000 }).should('be.visible');
+    cy.wait(25000); 
 }
 
 //mail verification
@@ -154,7 +157,9 @@ Enter_email(email){
 }
 click_mail_continue() {
     cy.get(this.continue_email_button).click();
-    cy.wait(35000);
+    cy.wait(2000);
+    cy.get(this.Pan_no_field, { timeout: 200000 }).should('be.visible');
+    // cy.wait(35000);
 }
 
 //pan verification
@@ -168,9 +173,10 @@ enter_pan_dob(PanDOB){
 click_pan_continue(){
     cy.get(this.pan_continue_button).click();
 }
-/*click_kra_continue(){
+
+click_kra_continue(){
     cy.get(this.kra_continue_button).click();
-}*/
+}
 //Aadhaar
 Digio_link(){
     cy.get(this.digio_aadhaar).click() 
@@ -348,10 +354,11 @@ click_TC_button(){
 Enter_Nominee_name(Nominee){
     cy.get(this.nominee_name).type(Nominee)
 }
-SelectNomineeRelationship()
+
+SelectNomineeRelationship(Relationship)
 {
     cy.get(this.relationshipdropdown).click()
-    cy.contains('Son').click({force:true});
+    cy.contains(Relationship).click({force:true});
     cy.wait(1000)
 }
 
@@ -376,10 +383,10 @@ Enter_guardian_email(gemail){
 Enter_guardian_mobilenum(mnum){
     cy.get(this.guardian_mobilenum).type(mnum)
 }
-SelectGuardianRelationship()
+SelectGuardianRelationship(GuardianRelationship)
 {
     cy.get(this.guardian_relationship).click()
-    cy.contains('Father').click({force:true});
+    cy.contains(GuardianRelationship).click({force:true});
     
 }
 Click_Guardian_address_asmine(){

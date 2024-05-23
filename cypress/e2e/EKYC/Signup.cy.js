@@ -15,58 +15,58 @@ describe('Launch URL', () => {
       s1.click_continue();
      
       // email verification
-      s1.Enter_name(data.Name);
-      s1.Enter_email(data.email);
-      s1.click_mail_continue();   
+      // s1.Enter_name(data.Name);
+      // s1.Enter_email(data.email);
+      // s1.click_mail_continue();   
       
      //  pan verification
     
-      s1.enter_pan_no(data.Pan_no);
-      s1.enter_pan_dob(data.Pan_DOB);
-      s1.click_pan_continue();  
+    //   s1.enter_pan_no(data.Pan_no);
+    //   s1.enter_pan_dob(data.Pan_DOB);
+    //   s1.click_pan_continue();  
         
-          //s1.click_kra_continue();
+    //   s1.click_kra_continue();
 
       
-      //Digio
+    //   //Digio
 
-      s1.testdigio();  
+    //   // s1.testdigio();  
          
-     // s1.Digio_link();
+    //  // s1.Digio_link();
 
-     // personal details
+    //  // personal details
      
-      s1.enter_father_name(data.Father_name);
-      s1.enter_mother_name(data.Mother_Name);
-      s1.select_marital_status(data.marital_status);
-      s1.Are_you_politically_exposed(data.politically_exposed);
-      s1.select_trading_experience(data.Your_trading_experience);
-      s1.select_anual_income(data.Anual_income);
-      // s1.select_occupation(data.occupation);
-      if (data.occupation.type === 'others') {
-        s1.select_occupation('others');
-        s1.enter_other_occupation(data.occupation.name);
-    } else {
-        s1.select_occupation(data.occupation.type);
-    }
+    //   s1.enter_father_name(data.Father_name);
+    //   s1.enter_mother_name(data.Mother_Name);
+    //   s1.select_marital_status(data.marital_status);
+    //   s1.Are_you_politically_exposed(data.politically_exposed);
+    //   s1.select_trading_experience(data.Your_trading_experience);
+    //   s1.select_anual_income(data.Anual_income);
+    //   // s1.select_occupation(data.occupation);
+    //   if (data.occupation.type === 'others') {
+    //     s1.select_occupation('others');
+    //     s1.enter_other_occupation(data.occupation.name);
+    // } else {
+    //     s1.select_occupation(data.occupation.type);
+    // }
       
-      s1.click_personal_detail_continue();
+    //   s1.click_personal_detail_continue();
      
-    //Trading Preferences
+    // //Trading Preferences
     
-    s1.click_Trading_Preferences_Continue();
+    // s1.click_Trading_Preferences_Continue();
     
-    //bank details
+    // //bank details
     
-    s1.select_add_bankDetails_manualy();
-    s1.click_add_manualy_button();
-    s1.enter_branch_ifsc_field(data.Branch_IFSC);
-    s1.enter_bank_act_no_field(data.Bank_account_number);
-    s1.enter_comfirm_bank_act_no_field(data.confirm_Bank_account_number);
-    s1.click_bank_continue_button();
+    // s1.select_add_bankDetails_manualy();
+    // s1.click_add_manualy_button();
+    // s1.enter_branch_ifsc_field(data.Branch_IFSC);
+    // s1.enter_bank_act_no_field(data.Bank_account_number);
+    // s1.enter_comfirm_bank_act_no_field(data.confirm_Bank_account_number);
+    // s1.click_bank_continue_button();
 
-    //T&C
-    s1.click_TC_button(); 
+    // //T&C
+    // s1.click_TC_button(); 
 
 
     //nominee1 details
@@ -74,13 +74,13 @@ describe('Launch URL', () => {
     s1.SelectNomineeRelationship(data.Nominee_Relationship);
     s1.Enter_percentage_share(data.Percentage_share1);
     s1.Enter_birth_date(data.Nominee_DOB);
-    cy.wait(500);
+    // cy.wait(500);
     s1.Enter_guardian_name(data.Guardian_name);
-    cy.wait(12000)
-    //s1.Enter_guardian_dob(data.Guardian_dob);
+    // cy.wait(12000)
+    s1.Enter_guardian_dob(data.Guardian_dob);
     s1.Enter_guardian_email(data.Guardian_email);
     s1.Enter_guardian_mobilenum(data.Guardian_mobilenum);
-    s1.SelectGuardianRelationship();
+    s1.SelectGuardianRelationship(data.Guardian_Relationship);
     s1.Click_Guardian_address_asmine();
     s1.Click_nominee_contact();
     s1.Click_add_nominee2();
