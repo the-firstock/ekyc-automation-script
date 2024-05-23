@@ -1,22 +1,40 @@
 {
-    "mobile_number" : "8951656945",
-    "email" : "umapathid07@gmail.com",
+    "mobile_number" : "9035213140",
+    "Name":"Ramya H J",
+    "email" : "ramyajayaram17@gmail.com",
 
-    "Pan_Name" : "umapathi d",
-    "Pan_no" : "AIZPU8599H",
-    "Pan_DOB" : "16051993",
+    "Pan_Name" : "HUGENAHALL JAYARAM RAMYA",
+    "Pan_no" : "AXWPR0880Q",
+    "Pan_DOB" : "08071985",
 
-    "Branch_IFSC" :  "IDIB000G033",
-    "Bank_account_number" : "6162292596",
-    "confirm_Bank_account_number" : "6162292596",
+    "Branch_IFSC" :  "SBIN0040872",
+    "Bank_account_number" : "64214561037",
+    "confirm_Bank_account_number" : "64214561037",
 
     "marital_status": "single" ,
-    "Mother_Name": "Geetha",
+    "Father_name":"JAYARAM H B",
+    "Mother_Name": "PUSHPA",
     "politically_exposed": "Yes",
     "Your_trading_experience": "New",
     "Anual_income" : "10-25 lakhs",
     "occupation" : {
         "type": "Private sector",
         "name": "Your Occupation Here"
-    }
+    },
+
+    "Nominee1_name": "Divith",
+    "Nominee_Relationship":"Son", 
+    "Percentage_share1":50,
+    "Nominee_DOB":"17022011",
+    "Guardian_name":"Amar R",
+    "Guardian_dob":"30/06/1979",
+    "Guardian_email":"amar@gmail.com",
+    "Guardian_mobilenum":"9900948030",
+
+    "Nominee2_name":"JAYARAM",
+    "Percentage-share2":25,
+    "Nominee2_dob":"19061959",
+    "Nominee2_address":"prashantha nilaya,shankarappa lay out",
+
+    "Nominee3_name":"Pushpa"
 }
