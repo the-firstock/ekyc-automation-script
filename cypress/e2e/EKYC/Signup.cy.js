@@ -21,7 +21,7 @@ describe('Launch URL', () => {
       
      //  pan verification
     
-    //   s1.enter_pan_no(data.Pan_no);
+      s1.enter_pan_no(data.Pan_no);
     //   s1.enter_pan_dob(data.Pan_DOB);
     //   s1.click_pan_continue();  
         
@@ -108,7 +108,7 @@ describe('Launch URL', () => {
     s1.Click_nominee_continue();    
    
     //upload documents
-    cy.wait(8000)
+    
     s1.SelectsignatureFile();
     s1.Done_signature();
     
@@ -123,11 +123,12 @@ describe('Launch URL', () => {
     s1.Click_Uploadalldocuments(); 
 
     //Photo
+
     //s1.Take_Photo();  
     
     //E-sign
     s1.Click_Esign(); 
-    s1.Click_signsetudoc(); 
+     s1.Click_signsetudoc(); 
    
 
 

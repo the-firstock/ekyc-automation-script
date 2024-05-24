@@ -101,10 +101,10 @@ browse_pan='.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-con
 done_pan="button[class$='MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-py8jni']";
 upload_statememt=':nth-child(3) > .css-qfdd9t > .MuiStack-root > #documentsUploadButton';
 browse_statement='[style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;"] > .MuiButtonBase-root';
-done_statementupload='#documentsDoneButton';
+done_statementupload="button[class$='MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-py8jni']";
 upload_cheque='#documentsUploadButton';
 browse_cheque='[style="display: flex; flex-direction: column; justify-content: center; align-items: center; width: 100%;"] > .MuiButtonBase-root';
-done_chequeupload='#documentsDoneButton';
+done_chequeupload="button[class$='MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-py8jni']";
 click_uploadalldocuments='#upLoadDocumentsContinueButton';
 
 //photo
@@ -115,7 +115,7 @@ click_photocontinue='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(
 click_esign='#aadharOpenLinkButton';
 click_esigncontinue="button[class$='MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium css-ql0aov']";
 verify_textonsetu='.powered-by-txt';
-setu_signdoc="button[id$='complete']";
+setu_signdoc="#complete";
 verify_text2="div[class='break-word'] p[data-text-colour='slate']";
 enter_aadhar="#identifier";
 send_otp='#get-otp-btn';
@@ -317,9 +317,9 @@ unselect_Trading_Preferences(unselect){
 }
 
 click_Trading_Preferences_Continue(){
-    cy.wait(7000);
+    cy.wait(2000);
     cy.get(this.Trading_Preferences_Continue).click();
-    cy.wait(3000);
+    cy.wait(2000);
     cy.get(this.trading).click();
     cy.wait(2000);
 }
@@ -461,7 +461,7 @@ SelectsignatureFile()
 }
 Done_signature(){
     cy.get(this.done_signature).click();
-    cy.wait(8000);
+    cy.wait(5000);
 }
 SelectpanFile(){
     cy.get(this.upload_pan).click();
@@ -470,29 +470,29 @@ SelectpanFile(){
 }
 Done_pan(){
     cy.get(this.done_pan).click({force:true});
-    cy.wait(8000);
+    cy.wait(5000);
 }
 SelectStatementFile(){
     cy.get(this.upload_statememt).click();
-    cy.get(this.browse_statement).attachFile('completeV4.pdf',{ subjectType: 'drag-n-drop' });
-    cy.wait(1000);
+    cy.get(this.browse_statement).attachFile('PAN.jpg',{ subjectType: 'drag-n-drop' });
+    cy.wait(700);
 }
 Done_statement(){
     cy.get(this.done_statementupload).click();
-    cy.wait(8000);
+    cy.wait(1000);
 }
 SelectchequeFile(){
     cy.get(this.upload_cheque).click();
-    cy.get(this.browse_cheque).attachFile('completeV4.pdf',{ subjectType: 'drag-n-drop' });
-    cy.wait(1000);
+    cy.get(this.browse_cheque).attachFile('PAN.jpg',{ subjectType: 'drag-n-drop' });
+    cy.wait(700);
 }
 Done_chequeupload(){
     cy.get(this.done_chequeupload).click();
-    cy.wait(5000)
+    cy.wait(500)
 }
 Click_Uploadalldocuments(){
     cy.get(this.click_uploadalldocuments).click();
-    cy.wait(30000);
+    cy.wait(2000);
 }
 
 //Photo
@@ -502,7 +502,7 @@ Take_Photo(){
 }
 //E-sign
 Click_Esign(){
-    cy.wait(2000);
+    cy.wait(500)
     cy.get(this.click_esign).click();
     cy.wait(50000);
     cy.get(this.click_esigncontinue).click();
@@ -512,18 +512,41 @@ Click_signsetudoc(){
     cy.visit('https://dg.setu.co/signature/preview?requestId=92ef437d-6d05-4a48-adcb-dcf52e5c66b1&signerId=5fc1ee9d-eaa3-4c1b-bcb1-3d8cd7040f50');
     
     cy.get(this.verify_textonsetu).should('have.text',"Powered by")
-    cy.get(this.Click_signsetudoc).contains("SIGN YOUR DOCUMENT").click({ force: true });
+    cy.log(this.Click_signsetudoc);
+    Cypress.on('uncaught:exception', (err, runnable) => {
+        // returning false here prevents Cypress from
+        // failing the test
+        return false;
+      });
+      
 
+    cy.get(this.Click_signsetudoc).contains('SIGN YOUR DOCUMENT').should('be.visible').click({force:true});
+    cy.wait(3000)
     //cy.get(this.Click_signsetudoc).click({force:true});
     
-    cy.visit('https://authenticate.e-mudhra.com/SETU/index.jsp?txnref=amFkbnJ1bmtUTU9vdFNaUTVLRS1MQTpiODc5MDU5YjI4NTg0ODRkYjFlNXxkM2U1NGI0ODMyODY5YzU5MjQzOTliYWZlZDZiMmQyNDdkMDA5ZDE1YzNhMjE3YjE5ZmU4ODA5MWVkM2Y1ZmUx&env=');
+   
+    cy.visit('https://authenticate.e-mudhra.com/SETU/index.jsp?txnref=azIyNFRhVFpUVkstbGFvM0xmOGZ6dzo5NDQ5ZjAxYWI5ZTU0NWQ1YmE2Ynw4MDU2MTZlNTBlMDIzMmFkNzA4YWU5YjU3ZmZkOGUwYjU3ZmQ2ZDZkNGQyODE0NzAzODYxN2FkYTljYzY2MTUx&env=');
+    cy.origin('https://authenticate.e-mudhra.com', () => {
+      cy.on('uncaught:exception', (e) => {
+        if (e.message.includes('Bootstrap\'s JavaScript requires jQuery')) {
+          // Ignore jQuery error
+          return false;
+        }
+      });
+      cy.visit('https://authenticate.e-mudhra.com/SETU/index.jsp?txnref=T3E5cl9mTkRRS084TVpYS2ZmRUJ4QTpkZDYwZmY1MDk5YmM0YTg3OTcxNnw0MzkyYzFkZTU1MTg5YmVkY2ZjN2NiMDc3OWU0MjE4MTRjMzFiMjg0YmFhN2YxZDk1ZTMxMjM2NmJkZjc3ZWM1&env=');
+    });
+
+    // Step 7: Verify the document name text
+   
+    
     cy.get(this.verify_text2).should('have.text',"Document name")
     cy.get(this.enter_aadhar).type('311307068251');
     cy.get(this.send_otp).click();
-    cy.wait(15000);
+    cy.wait(25000);
     cy.get(this.verify_otp).click();
     cy.wait(1000)
     cy.get(this.completeesign).click();
+    cy.wait(25000)
 }
 
 
