@@ -3,10 +3,11 @@ class signup
     constructor(data) {
         this.data = data;
         this.url = 'https://signup-uat.thefirstock.tech/';
+        this.url2='https://signup-admin.thefirstock.tech/';
         // Other class properties remain unchanged
     }
 url = 'https://signup-uat.thefirstock.tech/';
-
+url2='https://signup-admin.thefirstock.tech/';
 //mobile verification
 Mobile_no_field = 'body > div:nth-child(4) > div:nth-child(3) > div:nth-child(2) > div:nth-child(2) > form:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > input:nth-child(2)';
 Continue_Button = '#signupContinueButton';
@@ -77,7 +78,7 @@ add_nominee2='#nomineesAddNomineeButton';
 nominee_name2='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 nominee2_relationship="body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)";
 percentage_share2='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
-nominee2_dob='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
+nominee2_dob="input[value*='DD/MM/YYYY']";
 nominee2_address='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 nominee2_pincode='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 nominee2_city='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
@@ -122,10 +123,30 @@ send_otp='#get-otp-btn';
 verify_otp='#submit-otp-btn';
 completeesign='#complete';
 
+//1.Admin -login
+admin_email='#email';
+admin_password='#password';
+admin_login="button[type='submit']";
 
+//2 Admin-Home page
+client_logo='body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > aside:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > nav:nth-child(1) > ul:nth-child(1) > nav:nth-child(2) > ul:nth-child(1) > li:nth-child(1) > a:nth-child(1)';
+new_kyc="li[class='ps-menuitem-root ps-active css-rg08h7'] span[class='ps-menu-label ps-active css-12w9als']";
+all_client="div[class='Tabs_tabsCatagory__5PGe0'] div:nth-child(2)";
+stage='body > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)';
+searchfield="input[placeholder='Search....']";
 
+usericon="button[aria-label='Assign User ']";
+assignto='.css-12na9w2 > .MuiFormControl-root > .MuiInputBase-root > #demo-simple-select';
+assignbutton='.MuiButtonBase-root.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.MuiButton-root.MuiButton-contained.MuiButton-containedPrimary.MuiButton-sizeMedium.MuiButton-containedSizeMedium.css-zrjhrj';
 
+viewicon="div[id='row-0'] div[id='cell-12-undefined'] b button[aria-label='View Details']";
+deletebtn="button[aria-label='Delete Client']";
+deletereason="input[name$='deleted_reason']";
+deletesubmit="button[type='submit']";
 
+selectdeleted="div[class='MuiStack-root css-u4p24i'] div:nth-child(8)";
+deleted_viewbtn="button[aria-label='View Details']";
+deleted_deletebtn="button[aria-label='Permanent Delete Client']";
 
 
 
@@ -374,7 +395,6 @@ Enter_guardian_name(gname){
     cy.get(this.guardian_name).type(gname)
 }
 Enter_guardian_dob(gdob){
-    
     cy.get(this.guardian_dob).type(gdob)
 }
 Enter_guardian_email(gemail){
@@ -405,16 +425,16 @@ Enter_nominee2(name2){
 SelectNominee2_Relationship()
 {
     cy.get(this.nominee2_relationship).click()
-    cy.get('.MuiList-root > :nth-child(2)').click();
-    
+    cy.get('.MuiList-root > :nth-child(2)').click()
+    cy.wait(200)
 }
 Enter_percentage_share2(){
     cy.get(this.percentage_share2).clear()
     cy.get(this.percentage_share2).type('25')
 }
-Enter_Nominee2dob(){
-    //cy.get(this.nominee2_dob).type('19061960')
-
+Enter_Nominee2dob(dob2){
+     cy.get(this.nominee2_dob).type('dob2')
+    
 }
 Enter_nominee2_address(add){
     cy.get(this.nominee2_address).type(add)
@@ -549,6 +569,58 @@ Click_signsetudoc(){
     cy.wait(25000)
 }
 
+//Step 1:Admin Login
+visit_url2(){
+    cy.visit(this.url2);
+}
+
+Enter_Adminemail(aemail){
+    cy.get(this.admin_email).type(aemail)
+    
+}
+Enter_Adminpassword(apass){
+    cy.get(this.admin_password).type(apass)
+    cy.get(this.admin_login).click()
+    cy.wait(3000)
+}
+Click_client(){
+    cy.get(this.client_logo).click()
+    cy.contains('New KYC').click()
+}
+Click_all(){
+    cy.get(this.all_client).click()
+}
+Select_stage(){
+    cy.get(this.stage).click()
+    cy.contains('Esign section').click()
+}
+Search_field(forpan){
+    cy.get(this.searchfield).type(forpan)
+}
+
+Click_assignuser(){
+    cy.get(this.usericon).click()
+    cy.get(this.assignto).click()
+    cy.get('[data-value="cf7d3bb8-f05b-4846-b84d-a099a2d1ef75"]').click()
+    //cy.contains('Nitish Kumar P S').click()
+    cy.get(this.assignbutton).click()
+}
+Click_viewicon(){
+    cy.get(this.viewicon).click()
+    
+}
+Click_delete(){
+    cy.get(this.deletebtn).click()
+    cy.wait(2000)
+    cy.get(this.deletereason).type('test')
+    cy.get(this.deletesubmit).click()
+    cy.wait(1000)
+}
+Select_deleted(){
+    cy.get(this.selectdeleted).click()
+    cy.get(this.deleted_viewbtn).click()
+    cy.get(this.deleted_deletebtn).click()
+}
 
 
 

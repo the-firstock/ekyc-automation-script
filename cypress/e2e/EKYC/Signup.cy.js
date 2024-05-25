@@ -6,7 +6,6 @@ describe('Launch URL', () => {
     it('Should launch the URL', () => {
       s1.visit_url();
       cy.url().should('eq', s1.url);
-      cy.viewport(1366, 633)
 
   cy.fixture('signup').then((data)=>{
       //mobile number verification
@@ -15,26 +14,26 @@ describe('Launch URL', () => {
       s1.click_continue();
      
       // email verification
-      // s1.Enter_name(data.Name);
-      // s1.Enter_email(data.email);
-      // s1.click_mail_continue();   
+    //   s1.Enter_name(data.Name);
+    //   s1.Enter_email(data.email);
+    //   s1.click_mail_continue();   
       
-     //  pan verification
+    //  //  pan verification
     
-      s1.enter_pan_no(data.Pan_no);
+    //   s1.enter_pan_no(data.Pan_no);
     //   s1.enter_pan_dob(data.Pan_DOB);
     //   s1.click_pan_continue();  
         
-    //   s1.click_kra_continue();
+      // //s1.click_kra_continue();
 
       
-    //   //Digio
+      //Digio
 
-    //   // s1.testdigio();  
+      // s1.testdigio();  
          
-    //  // s1.Digio_link();
+      // s1.Digio_link();
 
-    //  // personal details
+     // personal details
      
     //   s1.enter_father_name(data.Father_name);
     //   s1.enter_mother_name(data.Mother_Name);
@@ -69,19 +68,19 @@ describe('Launch URL', () => {
     // s1.click_TC_button(); 
 
 
-    //nominee1 details
+    // //nominee1 details
     s1.Enter_Nominee_name(data.Nominee1_name);
     s1.SelectNomineeRelationship(data.Nominee_Relationship);
     s1.Enter_percentage_share(data.Percentage_share1);
     s1.Enter_birth_date(data.Nominee_DOB);
-    // cy.wait(500);
+    cy.wait(100);
     s1.Enter_guardian_name(data.Guardian_name);
-    // cy.wait(12000)
-    s1.Enter_guardian_dob(data.Guardian_dob);
+    cy.wait(12000)
+    // s1.Enter_guardian_dob(data.Guardian_dob);
     s1.Enter_guardian_email(data.Guardian_email);
     s1.Enter_guardian_mobilenum(data.Guardian_mobilenum);
     s1.SelectGuardianRelationship(data.Guardian_Relationship);
-    s1.Click_Guardian_address_asmine();
+   s1.Click_Guardian_address_asmine();
     s1.Click_nominee_contact();
     s1.Click_add_nominee2();
     
@@ -91,7 +90,7 @@ describe('Launch URL', () => {
     s1.SelectNominee2_Relationship();
     s1.Enter_percentage_share2();
     cy.wait(12000);
-    s1.Enter_Nominee2dob();
+   // s1.Enter_Nominee2dob(data.Nominee2_dob);
     s1.Enter_nominee2_address(data.Nominee2_address);
     s1.Enter_nominee2_pincode();
     s1.Enter_nominee2_city();
@@ -124,11 +123,11 @@ describe('Launch URL', () => {
 
     //Photo
 
-    //s1.Take_Photo();  
+    s1.Take_Photo();  
     
     //E-sign
-    s1.Click_Esign(); 
-     s1.Click_signsetudoc(); 
+     s1.Click_Esign(); 
+    //  s1.Click_signsetudoc(); 
    
 
 
@@ -136,4 +135,31 @@ describe('Launch URL', () => {
     
       })
     });
+    it.only('Should launch the URL', () => {
+      s1.visit_url2()
+      cy.url().should('eq', s1.url2);
+
+  cy.fixture('signup').then((data)=>{
+    //admin login
+    s1.Enter_Adminemail(data.Admin_email);
+    s1.Enter_Adminpassword(data.Admin_password);
+
+    //New KYC
+    s1.Click_client();
+    s1.Click_all();
+    s1.Select_stage();
+
+    //s1.Search_field(data.Pan_no);
+    
+    s1.Click_assignuser();
+
+    s1.Click_viewicon()
+
+    s1.Click_delete()
+
+    s1.Select_deleted()
+
+
+  })
+  });
  });
