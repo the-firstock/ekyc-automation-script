@@ -166,7 +166,7 @@ click_continue() {
     cy.get(this.Continue_Button).click();
     // cy.get(this.email_field, { timeout: 200000 }).should('be.visible');
     // cy.get(this.Pan_no_field, { timeout: 200000 }).should('be.visible');
-    cy.wait(25000); 
+    cy.wait(25555000); 
 }
 
 //mail verification
