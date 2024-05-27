@@ -65,7 +65,7 @@ relationshipdropdown=':nth-child(2) > .NomineeStyles_textfields__SHPbD > .MuiFor
 percentage_of_share ='input[name="percentageofShare"]';
 date_of_birth='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 guardian_name='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
-// guardian_dob='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)'
+guardian_dob="input[id$=':rm:']";
 // guardian_dob="body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)";
 guardian_email='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 guardian_mobilenum='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(4) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
@@ -78,7 +78,7 @@ add_nominee2='#nomineesAddNomineeButton';
 nominee_name2='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 nominee2_relationship="body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)";
 percentage_share2='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
-nominee2_dob="input[value*='DD/MM/YYYY']";
+nominee2_dob="input[id$=':rv:']";
 nominee2_address='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 nominee2_pincode='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(5) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 nominee2_city='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > div:nth-child(6) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
@@ -89,6 +89,7 @@ add_nominee3='#nomineesAddNomineeButton';
 nominee3_name='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 nominee3_relationship='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1)';
 percentage_share3='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > div:nth-child(1) > div:nth-child(3) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
+nominee3_dob="input[id$=':r19:']";
 other_relationship='body > div:nth-child(4) > div:nth-child(2) > div:nth-child(2) > form:nth-child(2) > div:nth-child(1) > div:nth-child(1) > div:nth-child(1) > div:nth-child(5) > div:nth-child(1) > div:nth-child(2) > div:nth-child(2) > div:nth-child(2) > div:nth-child(1) > div:nth-child(2) > input:nth-child(1)';
 nominee3_contact=':nth-child(5) > :nth-child(1) > .NomineeStyles_fieldsSection__2GYDN > .NomineeStyles_checkBox__n4c8D > .MuiButtonBase-root > .PrivateSwitchBase-input';
 nominee_continue_btn='#nomineesContinueButton';
@@ -166,7 +167,7 @@ click_continue() {
     cy.get(this.Continue_Button).click();
     // cy.get(this.email_field, { timeout: 200000 }).should('be.visible');
     // cy.get(this.Pan_no_field, { timeout: 200000 }).should('be.visible');
-    cy.wait(25555000); 
+    cy.wait(25000); 
 }
 
 //mail verification
@@ -428,26 +429,26 @@ SelectNominee2_Relationship()
     cy.get('.MuiList-root > :nth-child(2)').click()
     cy.wait(200)
 }
-Enter_percentage_share2(){
+Enter_percentage_share2(pshare2){
     cy.get(this.percentage_share2).clear()
-    cy.get(this.percentage_share2).type('25')
+    cy.get(this.percentage_share2).type(pshare2)
 }
 Enter_Nominee2dob(dob2){
-     cy.get(this.nominee2_dob).type('dob2')
+     cy.get(this.nominee2_dob).type(dob2)
     
 }
 Enter_nominee2_address(add){
     cy.get(this.nominee2_address).type(add)
 }
-Enter_nominee2_pincode(){
-    cy.get(this.nominee2_pincode).type('567432')
+Enter_nominee2_pincode(pin){
+    cy.get(this.nominee2_pincode).type(pin)
 }
-Enter_nominee2_city(){
-    cy.get(this.nominee2_city).type('Tiptur')
+Enter_nominee2_city(city){
+    cy.get(this.nominee2_city).type(city)
 }
-Enter_nominee2_state(){
+Enter_nominee2_state(state){
     cy.get(this.nominee2_state).click()
-    cy.contains('Delhi').click({Force:true});
+    cy.contains(state).click({Force:true});
 }
 Click_add_nominee3(){
     cy.get(this.add_nominee3).click()
@@ -455,15 +456,18 @@ Click_add_nominee3(){
 Enter_nominee3_name(name3){
     cy.get(this.nominee3_name).type(name3)
 }
-Select_nominee3_relationship(){
+Select_nominee3_relationship(relation3){
     cy.get(this.nominee3_relationship).click()
-    cy.contains('Others').click()
+    cy.contains(relation3).click()
 }
-Enter_percentage_share3(){
-    cy.get(this.percentage_share3).type('25')
+Enter_percentage_share3(pshare3){
+    cy.get(this.percentage_share3).type(pshare3)
 }
-Enter_otherrelationship(){
-    cy.get(this.other_relationship).type('Friend')
+Enter_Nominee3_dob(n3dob){
+    cy.get(this.nominee3_dob).type(n3dob)
+}
+Enter_otherrelationship(other3){
+    cy.get(this.other_relationship).type(other3)
 }
 Click_nominee3contact(){
     cy.get(this.nominee3_contact).click()
@@ -609,10 +613,10 @@ Click_viewicon(){
     cy.get(this.viewicon).click()
     
 }
-Click_delete(){
+Click_delete(delreason){
     cy.get(this.deletebtn).click()
     cy.wait(2000)
-    cy.get(this.deletereason).type('test')
+    cy.get(this.deletereason).type(delreason)
     cy.get(this.deletesubmit).click()
     cy.wait(1000)
 }

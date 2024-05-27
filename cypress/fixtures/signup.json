@@ -35,11 +35,21 @@
     "Guardian_Relationship": "Father",
 
     "Nominee2_name":"Jayaram",
-    "Percentage-share2":25,
+    "Percentage_share2":25,
     "Nominee2_dob":"19061960",
     "Nominee2_address":"prashantha nilaya,shankarappa lay out",
+    "Pincode":"573201",
+    "cityname":"Tiptur",
+    "State":"Delhi",
+
+
      "Nominee3_name":"Pushpa",
+     "Percentage_share3":25,
+     "Nominee3_dob":"16021968",
+     "Nominee3_relationship":"Others",
+     "OtherRelationship3":"Friend",
+
      "Admin_email":"9632916893",
-     "Admin_password":"Password@123"
-     
+     "Admin_password":"Password@123",
+     "Delet_Reason":"test"
 }
